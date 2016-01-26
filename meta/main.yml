@@ -1,0 +1,19 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: openapphack
+  description: Ansible role to configure proxy settings
+  company: ""
+  license: APL 2.0
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - networking
+  - system

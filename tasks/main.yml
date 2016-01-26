@@ -1,0 +1,15 @@
+---
+# tasks file for proxy_settings
+
+- name: Configure proxy settings for OS (/etc/environment)
+  template: src=environment.j2 dest=/etc/environment
+  tags: proxy
+
+- name: Configure proxy settings for OS (/etc/profile.d/proxy.sh)
+  template: src=proxy.sh.j2 dest=/etc/profile.d/proxy.sh
+  tags: proxy
+
+- name: Configure proxy settings for apt-get/aptitude
+  template: src=80proxy.j2 dest=/etc/apt/apt.conf.d/80proxy
+  tags: proxy
+  when: ansible_os_family == 'Debian'
